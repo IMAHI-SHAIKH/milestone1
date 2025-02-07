@@ -1,101 +1,105 @@
-import Image from "next/image";
+import React from 'react';
 
-export default function Home() {
+import Footer from '@/components/Footer';
+import FeaturedProducts from '@/components/FeaturedProducts';
+import TrendingProducts from '@/components/TrendingProducts';
+import DiscountSection from '@/components/DiscountSection';
+import ShopList from '@/components/ShopList';
+import ShopGrid from '@/components/ShopGrid';
+import Navbar from '@/components/Navbar';
+import BlogPage from '@/components/BlogPage';
+
+
+
+
+const HomePage: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section of page */}
+      <header className="bg-purple-100 py-20 text-center">
+        <h1 className="text-4xl font-bold text-purple-700 mb-4">Best furniture for your Home</h1>
+        <h1 className='bg-purple-100 py-25  text-centre text-xl'>New Furniture Collection
+        Trends in 2024</h1>
+       
+<div className="image-content">
+    <img src="Sofa1.png" alt="Furniture" />
+</div>
+
+
+
+        <p className="text-black-600 text-lg">
+          Explore our latest collection of modern furniture and home decor!
+        </p>
+      </header>
+
+      {/* Featured Products */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-8">Featured Products</h2>
+          <FeaturedProducts />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Trending Products */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-8">Special Offer 50% off</h2>
+          <TrendingProducts />
+        </div>
+      </section>
+
+      {/* Discount Section */}
+      <section className="py-16 bg-purple-100">
+        <div className="container mx-auto px-4">
+          <DiscountSection />
+        </div>
+      </section>
+
+      {/* ShopList */}
+<section className='py-16 bg-white'>
+<div className='container mx-auto px-4'>
+<ShopList/>
+</div>
+</section>
+
+{/* ShopGrid */}
+<section className='py-15 bg-purple-200'>
+<div className='box mx-auto px-5'>
+<ShopGrid />
+</div>
+</section>
+
+{/* BlogPage */}
+<section className='box bg-purple-400'>
+<div className=' box-border mx-6 px-6'>
+<BlogPage/>
+</div>
+</section>
+
+{/* HomePage
+<section className='box bg-purple-200'>
+  <div className=' box border-separate mx-5 px 6'>
+<HomePage/>
+  </div> 
+</section> */}
+{/* 
+Contact page
+<section className="py-16">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-bold text-center mb-8">Contact Page</h3>
+          <ContactPage />
+        </div>
+      </section> */}
+
+
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
-}
+};
+
+export default HomePage;
